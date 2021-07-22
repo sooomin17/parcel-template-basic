@@ -1,0 +1,69 @@
+npm init -y
+
+npm i -D parcel-bundler
+
+= package.json
+"scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+}
+
+npm run dev
+
+
+구글검색 ico converter
+
+구글검색 parcel plugin static files copy
+
+npm install -D parcel-plugin-static-files-copy
+
+= package.json
+,
+  "staticFiles": {
+    "staticPath": "static"
+  }
+
+npm i -D postcss autoprefixer
+
+= package.json
+,
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+
+
+= .postcssrc.js
+* Node.js 환경에서는 CommmonJs 방식을 사용하기 때문에
+* import 를 사용할수 없어  require() 를 대신 사용한다.
+* export 를 사용할수 없어  module.exports 를 대신 사용한다.
+module.exports = {
+    plugins: [
+        require('autoprefixer')
+    ]
+}
+
+
+// 버전 오류가 난다면 한버전 다운그레이드
+npm i -D autoprefixer@9 
+
+npm run dev
+
+// babel ES6 이상인 경우 이전버전과 호환되도록 변환하는 트랜스 컴파일러
+npm i -D @babel/core @babel/preset-env
+
+= .babelrc.js
+module.exports = {
+    presets: ['@babel/preset-env']
+}
+
+// async await 사용위해
+npm i -D @babel/plugin-transform-runtime
+
+= .babelrc.js
+module.exports = {
+    presets: ['@babel/preset-env'],
+    plugins: [
+        ['@babel/plugin-transform-runtime']
+    ]
+}
