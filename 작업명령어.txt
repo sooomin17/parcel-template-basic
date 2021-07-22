@@ -67,3 +67,35 @@ module.exports = {
         ['@babel/plugin-transform-runtime']
     ]
 }
+
+// CLI (command line interface)
+
+// github 업로드
+
+= .gitignore
+.chache
+.DS_Stroe // MAC
+node_modules
+dist
+
+git init
+
+git status
+
+git add .
+
+git status
+
+git commit -m 'Create project Parcel'
+
+git log
+
+// github 저장소생성  parcel-template-basic
+// 저장소 주소 복사 https://github.com/sooomin17/parcel-template-basic.git
+
+git remote add origin https://github.com/sooomin17/parcel-template-basic.git
+
+git push origin master
+
+// github 업로드 완료
+
